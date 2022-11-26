@@ -1,14 +1,14 @@
 <?php
 
-    namespace App\Http\Controllers;
+  namespace App\Http\Controllers;
 
-    use Illuminate\Http\Request;
-    use Illuminate\Support\Facades\Cookie;
+  use Illuminate\Http\Request;
+  use Illuminate\Support\Facades\Cookie;
 
-    class AuthController extends Controller
+  class AuthController extends Controller
+  {
+    public function registerGitHub(Request $user)
     {
-        public function registerGitHub(Request $user)
-        {
-            Cookie::queue('githubUser', $user);
-        }
+      Cookie::queue('githubUser', $user);
     }
+  }

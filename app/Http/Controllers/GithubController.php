@@ -18,8 +18,8 @@ class GithubController extends Controller
       'avatar' => $githubUser->getAvatar(),
       'nickname' => $githubUser->getNickname(),
     ]);
-    setcookie("userID", $user->getFillable()['id']);
-    setcookie("username", $user->getFillable()['name']);
-    redirect('dashboard');
+    setcookie("userID", $user->getFillable()['id'], time() + 3600, '/');
+    setcookie("username", $user->getFillable()['name'], time() + 3600, '/');
+    redirect()->route('dashboard');
   }
 }

@@ -32,6 +32,7 @@
 </div>
 
 <x-homeComponent/>
+<x-githubComponent/>
 
 </body>
 </html>

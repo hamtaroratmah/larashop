@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserDTO;
-use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Contracts\User;
 
 class GithubController extends Controller
@@ -21,6 +20,5 @@ class GithubController extends Controller
     ]);
     setcookie("userID", $user->getFillable()['id'], time() + 3600, '/');
     setcookie("username", $user->getFillable()['name'], time() + 3600, '/');
-    Redirect::to('/dashboard');
   }
 }

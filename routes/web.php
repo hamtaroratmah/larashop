@@ -16,10 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
   return view('welcome');
-});
+})->name('home');
 
 Route::get('/dashboard', ['as' => 'dashboard', function () {
+  if (!isset($_COOKIE['username'])) return redirect()->route('home');
+
   return view('dashboard');
+}]);
+
+Route::get('/authentification', ['as' => 'login', function () {
+  return view('authentification');
 }]);
 
 Route::middleware('auth')->group(function () {
